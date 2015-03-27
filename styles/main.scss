@@ -6,7 +6,7 @@ $border-radius-base: 5px;
 $brand-primary: #3BAFDA;
 $brand-seconday: #4FC1E9;
 $black: #2C2E33;
-
+$black2: #4A4E53;
 $text-color: $black;
 
 $navbar-inverse-border: transparent;
@@ -19,6 +19,10 @@ $navbar-inverse-link-color: #fff;
 $navbar-inverse-link-active-bg: none;
 
 @import "bootstrap";
+
+strong {
+  font-weight: 600;
+}
 
 .logo {
   height: 100%;
@@ -112,7 +116,7 @@ $navbar-inverse-link-active-bg: none;
 }
 
 .meat {
-  padding: 55px 0;
+  padding: 55px 0 0;
 }
 
 .carousel-caption {
@@ -216,6 +220,45 @@ hr {
   width: 1px;
 }
 
+.illustration {
+  padding: 30px 10px 78px;
+
+  .sub-title {
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .title {
+    color: $black2;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 0.12px;
+  }
+
+  .description {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 20px;
+    img {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.section-basecamp {
+  background: #3C4046;
+  color: #fff;
+
+  .title, .sub-title, .description {
+    color: #fff;
+  }
+}
+
+footer {
+  background: $brand-primary;
+  padding: 40px 10px;
+}
+
 @media (min-width: $screen-sm-min) {
   .lead {
     text-align: left;
@@ -236,6 +279,14 @@ hr {
 
   .navbar-collapse {
     background: $brand-seconday;
+  }
+
+  .social-links {
+    .block-link {
+      height: 40px;
+      width: 41px;
+      background-size: 40px 41px;
+    }
   }
 
   .navbar-nav {
@@ -285,9 +336,32 @@ hr {
     .social-links {
       padding: 0;
 
-      p {
-        padding: 2px 0;
+      p.lead {
+        padding: 0;
+        margin-left: -15px;
+        font-size: 16px;
       }
     } 
+  }
+
+  .illustration {
+    padding: 100px 10px;
+    .sub-title {
+      font-size: 20px;
+    }
+
+    .title {
+      font-size: 40px;
+    }
+
+    .description {
+      font-size: 18px;
+      width: 70%;
+      margin-top: 20px;
+    }
+  }
+
+  footer {
+    padding: 80px 10px;
   }
 }
