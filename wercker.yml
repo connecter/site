@@ -1,0 +1,58 @@
+box: wercker-labs/docker
+
+build:
+  steps:
+    - script:
+        name: build docker image
+        code: |
+          docker build -t site .
+
+    - script:
+        name: tag with release version
+        code: |
+          docker tag site connecter/site:$(cat release_tag)
+
+    - script:
+        name: tag with build name # change to build name env later
+        code: |
+          docker tag site connecter/site:staging
+
+    - script:
+        name: login to docker
+        code: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD -e $DOCKER_EMAIL
+
+    - script:
+        name: publish docker image with release version
+        code: |
+          docker push connecter/site:$(cat release_tag)
+
+    - script:
+        name: publish docker image with build version # change to build name env later
+        code: |
+          docker push connecter/site:staging
+
+    - script:
+        name: echo docker pull command
+        code: |
+          echo "docker pull connecter/site:$(cat release_tag)"
+          echo "docker pull connecter/site:staging"
+
+deploy:
+  steps:
+    - add-to-known_hosts:
+        hostname: www.connecter.io
+
+    - mktemp:
+       envvar: PRIVATEKEY_PATH
+
+    - create-file:
+       name: write key
+       filename: $PRIVATEKEY_PATH
+       content: $FLEET_DEPLOY_KEY_PRIVATE
+       overwrite: true
+       hide-from-log: true
+
+    - script:
+       name: restart site
+       code: ssh -i $PRIVATEKEY_PATH -l core -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no www.connecter.io "fleetctl stop site@1.service && fleetctl start site@1.service"
