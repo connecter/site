@@ -33,6 +33,7 @@ module.exports = {
     dest: dest + "/scripts"
   },
   production: {
+    appSrc: src,
     cssSrc: dest + '/*.css',
     jsSrc: dest + '/*.js',
     dest: dest
