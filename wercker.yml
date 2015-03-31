@@ -2,6 +2,41 @@ box: wercker-labs/docker
 
 build:
   steps:
+    - install-packages:
+        packages: nodejs nodejs-legacy npm git ruby ruby-bundler
+
+    - script:
+        name: update nodejs and npm
+        code: |
+          sudo npm install -g npm
+          sudo npm install -g n
+          sudo n stable
+
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+
+    # Local npm install
+    - npm-install:
+        options: .
+
+    - script:
+        name: install ruby-sass and sass css importer gem
+        code: |
+          bundle install
+
+    - script:
+        name: build gulp dist
+        code: |
+          ./node_modules/gulp/bin/gulp.js build
+
+    - script:
+        name: output release version
+        code: |
+          git describe --tags --always --long --dirty > "$WERCKER_OUTPUT_DIR/release_tag"
+
     - script:
         name: build docker image
         code: |
