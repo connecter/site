@@ -40,10 +40,6 @@ body {
   background: #fff;
 }
 
-.logo {
-  padding: 0 10px;
-}
-
 .navbar-toggle {
   border: none;
   margin: 0;
@@ -78,26 +74,60 @@ body {
   box-shadow: none;
   background: $brand-primary;
   padding: 0 10px;
+
+  @media (min-width: $screen-sm-min) {
+    background: $brand-seconday;
+  }
 }
 
-.navbar-nav {
+.navbar-inverse .navbar-nav {
   font-size: 18px;
   font-weight: 300;
   text-transform: uppercase;
 
   .active {
     font-weight: 700;
+
+    a:hover {
+      color: #fff;
+    }
   }
 
   li > a {
-    padding: 20px 25px;
+    padding: 20px 40px;
+    letter-spacing: 0.5px;
 
     &:hover {
-      text-decoration: underline;
+      color: #595d61;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    > li > a {
+      padding: 16.5px 10px;
+  
+      &:before {
+        content: '';
+        border-right: 1px solid #fff;
+        height: 18px;
+        margin: 2px 10px 0 -5px;
+        display: block;
+        float: left;
+      }
+    }
+
+    > li:first-child > a:before {
+      display: none;
     }
   }
 }
 
+
+#navbar {
+  @media (min-width: $screen-sm-min) {
+    float: right;
+  }
+}
 
 .social-links {
   list-style: none;
@@ -131,6 +161,14 @@ body {
   .plus {
     background-image: url(../images/plus.svg);
   }
+
+  @media (min-width: $screen-sm-min) {
+    .block-link {
+      height: 40px;
+      width: 41px;
+      background-size: 40px 41px;
+    }
+  }
 }
 
 .meat {
@@ -143,12 +181,34 @@ body {
   bottom: 0;
   z-index: 10;
   font-weight: 300;
-  font-size: 30px;
+  font-size: 36px;
   color: #fff;
   text-align: left;
   text-shadow: none;
   padding: 20px 25px;
   background: rgba(44,46,51,0.90);
+
+  @media (min-width: $screen-sm-min) {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    bottom: initial;
+    left: initial;
+    transform: translate(0, -50%);
+    width: 380px;
+    font-size: 42px;
+    padding: 20px 40px;
+
+    &.left {
+      left: 0;
+      right: initial;
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 64px;
+    width: 540px;
+  }
 }
 
 .carousel-indicators {
@@ -179,17 +239,32 @@ body {
   background: #3C4046;
   color: #AAB2B9;
 
-  padding: 30px 10px 15px;
+  padding: 30px 0 15px;
+}
 
+.follow {
   .social-links {
     padding: 20px 0 0;
   }
+
+  @media (min-width: $screen-sm-min) {
+    padding-bottom: 40px;
+    .social-links {
+      padding: 0;
+
+      p.lead {
+        padding: 0;
+        font-size: 16px;
+      }
+    } 
+  }
 }
+
 
 .section-why {
   background: #D6DBE0;
 
-  padding: 40px 10px;
+  padding: 40px 0;
 
   p {
     font-size: 18px;
@@ -207,6 +282,10 @@ body {
 
 .breath-xs {
   margin-top: 18px;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: auto;
+  }
 }
 
 
@@ -221,6 +300,11 @@ body {
   text-align: center;
   padding: 18px 0 18px;
   margin: 0;
+
+  @media (min-width: $screen-sm-min) {
+    text-align: left;
+    font-size: 16px;
+  }
 }
 
 hr {
@@ -230,6 +314,10 @@ hr {
 
 .centered-xs {
   text-align: center;
+
+  @media (min-width: $screen-sm-min) {
+    text-align: initial;
+  }
 }
 
 .vertical-seperator {
@@ -240,7 +328,7 @@ hr {
 }
 
 .illustration {
-  padding: 30px 10px 78px;
+  padding: 30px 0 78px;
 
   strong {
     font-weight: 600;
@@ -249,6 +337,7 @@ hr {
   .sub-title {
     font-size: 16px;
     font-weight: 300;
+    letter-spacing: 0.2px;
   }
 
   .title {
@@ -256,14 +345,37 @@ hr {
     font-size: 30px;
     font-weight: 300;
     letter-spacing: 0.12px;
+    line-height: 1.15;
   }
 
   .description {
     font-size: 18px;
     font-weight: 300;
     margin-top: 20px;
+    letter-spacing: 0.2px;
     img {
       padding-bottom: 20px;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    padding: 100px 0;
+
+    .sub-title {
+      font-size: 20px;
+      letter-spacing: 0.2px;
+    }
+
+    .title {
+      font-size: 40px;
+      line-height: 1.2;
+    }
+
+    .description {
+      font-size: 24px;
+      width: 90%;
+      margin-top: 20px;
+      letter-spacing: 0.2px;
     }
   }
 }
@@ -272,20 +384,25 @@ hr {
   background: #3C4046;
   color: #fff;
 
-  .title, .sub-title, .description {
+  .title {
     color: #fff;
+  }
+
+  .sub-title, .description {
+    color: #b4bcc4;
+    letter-spacing: 0.3px;
   }
 }
 
 footer {
   background: $brand-primary;
-  padding: 40px 10px;
+  padding: 40px 0 0;
   color: #fff;
   font-size: 14px;
 
   ul {
     list-style: none;
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
   p {
@@ -298,12 +415,19 @@ footer {
     font-size: 14px;
     margin-top: 0;
   }
+
+  .lead {
+    color: #595d61;
+    padding-bottom: 0;
+  }
   
   a {
     color: #fff;
+    letter-spacing: 0.3px;
 
     &:hover, &:active, &:focus{
-      color: #fff;
+      color: #595d61;
+      text-decoration: none;
     }
 
     &.title {
@@ -312,8 +436,8 @@ footer {
     }
   }
 
-  .social-links {
-    padding: 20px 15px;
+  .follow .social-links {
+    padding: 0 15px;
   }
 
   .logo-wrap {
@@ -321,20 +445,44 @@ footer {
   }
 
   .copyright {
-    padding: 20px 20px;
+    padding: 35px 0 5px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    padding: 80px 10px 20px;
+
+    .logo-wrap {
+      padding: 5px 0 30px;
+    }
+
+    .follow .social-links {
+      padding: 0;
+    }
+
+    .copyright {
+      padding: 10px 0;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    li {
+      display: inline-block;
+
+      a {
+        padding: 0 30px;
+      }
+    }
   }
 }
 
-.col-sm-1by5 {
-  padding: 0 15px;
-}
-
 .features {
-  padding: 17px 0 70px;
+  padding: 35px 0 63px;
 
   .intro {
     color: #fff;
-    padding: 50px 0;
+    padding: 50px 0 35px;
     background: #3C4046;
     margin-bottom: 20px;
     
@@ -342,10 +490,11 @@ footer {
       font-weight: 300;
       font-size: 16px;
       color: #AAB2B9;
-      margin-bottom: 25px;
+      margin-bottom: 17px;
     }
 
     h1 {
+      margin-top: 10px;
       font-size: 30px;
       font-weight: 300;
     }
@@ -353,7 +502,7 @@ footer {
 
   h2 {
     font-weight: 300;
-    font-size: 40px;
+    font-size: 36px;
     margin-bottom: 15px;
   }
 
@@ -362,10 +511,27 @@ footer {
     font-size: 18px;
     font-weight: 300;
   }
-}
 
-.row {
-  margin-right: 0;
+  @media (min-width: $screen-sm-min) {
+    padding: 55px 0 175px;
+
+    .intro {
+      padding: 90px 0;
+      margin-bottom: 90px;
+      
+      p {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        font-size: 55px;
+      }
+    }
+    h2 {
+      font-size: 40px;
+    }
+  }
 }
 
 .blog {
@@ -396,161 +562,14 @@ footer {
   p {
     font-size: 13px;
     font-family: 'Glegoo', serif;
+    line-height: 1.75;
   }
 
   a {
     color: #4A89DC;
   }
-}
 
-@media (min-width: $screen-sm-min) {
-  .col-sm-1by5 {
-    width: 20%;
-    float: left;
-  }
-
-  .row {
-    margin-right: -15px;
-  }
-  
-  .lead {
-    text-align: left;
-    font-size: 16px;
-  }
-  
-  .logo {
-    padding:0;
-  }
-
-  .centered-xs {
-    text-align: initial;
-  }
-
-  .breath-xs {
-    margin-top: auto;
-  }
-
-  .navbar-collapse {
-    background: $brand-seconday;
-  }
-
-  .social-links {
-    .block-link {
-      height: 40px;
-      width: 41px;
-      background-size: 40px 41px;
-    }
-  }
-
-  .navbar-nav {
-    > li > a {
-      padding: 16.5px 10px;
-  
-      &:before {
-        content: '';
-        border-right: 1px solid #fff;
-        height: 18px;
-        margin: 2px 10px 0 -5px;
-        display: block;
-        float: left;
-      }
-    }
-
-    > li:first-child > a:before {
-      display: none;
-    }
-  }
-
-  #navbar {
-    float: right;
-    margin-right: 30px;
-  }
-
-  .carousel-caption {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    bottom: initial;
-    left: initial;
-    width: 40%;
-    transform: translate(0, -50%);
-    max-width: 460px;
-    font-size: 42px;
-    padding: 20px 40px;
-
-    &.left {
-      left: 0;
-      right: initial;
-    }
-  }
-
-  .section-subscribe {
-    padding-bottom: 40px;
-    .social-links {
-      padding: 0;
-
-      p.lead {
-        padding: 0;
-        margin-left: -15px;
-        font-size: 16px;
-      }
-    } 
-  }
-
-  .illustration {
-    padding: 100px 10px;
-
-    .sub-title {
-      font-size: 20px;
-    }
-
-    .title {
-      font-size: 40px;
-    }
-
-    .description {
-      font-size: 18px;
-      width: 70%;
-      margin-top: 20px;
-    }
-  }
-
-  footer {
-    padding: 80px 10px;
-
-    .logo-wrap {
-      padding: 5px 10px 30px;
-    }
-
-    .social-links {
-      padding: 0;
-    }
-
-    .copyright {
-      padding: 10px 0;
-    }
-  }
-
-
-  .features {
-    padding: 55px 0 175px;
-
-    .intro {
-      padding: 90px 0;
-      margin-bottom: 90px;
-      
-      p {
-        font-size: 18px;
-        margin-bottom: 15px;
-      }
-
-      h1 {
-        font-size: 55px;
-      }
-    }
-  }
-
-  .blog {
+  @media (min-width: $screen-sm-min) {
     article {
       padding: 60px 0 125px;
     }
@@ -563,6 +582,7 @@ footer {
 
     p {
       font-size: 16px;
+      line-height: 1.5;
     }
 
     .meta {
