@@ -534,6 +534,53 @@ footer {
   }
 }
 
+
+.meta {
+  font-size: 14px;
+  color: #73787D;
+  text-align: center;
+
+  .twitter-small {
+    background: url("../images/twitter-small.svg") 0 0 no-repeat;
+    width: 15px;
+    height: 13px;
+    display: inline-block;
+    margin: 0  0 0 10px;
+
+    &:after {
+      display: none;
+      content: url("../images/twitter-small-hover.svg");
+    }
+
+    &:hover {
+      background-image: url("../images/twitter-small-hover.svg");
+    }
+  }
+
+  .linkedin-small {
+    background: url("../images/linkedin-small.svg") 0 0 no-repeat;
+    width: 15px;
+    height: 14px;
+    display: inline-block;
+    margin: 0  10px  0 10px;
+
+
+    &:after {
+      display: none;
+      content: url("../images/linkedin-small-hover.svg");
+    }
+
+    &:hover {
+      background-image: url("../images/linkedin-small-hover.svg");
+    }
+  }
+
+  .date {
+    border-left:1px solid #73787D;
+    padding-left: 10px;
+  }
+}
+
 .blog {
   article {
     padding: 35px 0 60px;
@@ -551,12 +598,6 @@ footer {
     text-align: center;
     margin-bottom: 35px;
     margin-top: 14px;
-  }
-
-  .meta {
-    font-size: 14px;
-    color: #73787D;
-    text-align: center;
   }
 
   p {
@@ -588,5 +629,19 @@ footer {
     .meta {
       font-size: 14px;
     }
+  }
+}
+
+.col-sm-1by5 {
+  padding: 0 25px;
+  
+  @media (min-width: $screen-sm-min) {
+    width: 20%;
+  }
+}
+
+.images-list {
+  img {
+    padding: 20px 0;
   }
 }

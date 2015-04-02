@@ -1,12 +1,10 @@
 var gulp = require('gulp');
-var config = require('../config').markup;
+var config = require('../config').pages;
 var browserSync  = require('browser-sync');
 var handlebars = require('gulp-compile-handlebars');
 var handleErrors = require('../util/handleErrors');
-var rename = require('gulp-rename');
 
-
-gulp.task('markup', function() {
+gulp.task('pages', function() {
   options = {
     batch : ['./src/partials']
   }

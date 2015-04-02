@@ -22,10 +22,15 @@ module.exports = {
     src: src + "/images/**",
     dest: dest + "/images"
   },
-  markup: {
+  pages: {
     src: src + "/pages/**",
     partials: src + "/partials/**",
     dest: dest
+  },
+  blog: {
+    src: src + "/blog/**",
+    partials: src + "/partials/**",
+    dest: dest + "/blog"
   },
 
   scripts: {
