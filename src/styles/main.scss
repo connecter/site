@@ -338,6 +338,10 @@ hr {
     font-weight: 600;
   }
 
+  .img-responsive {
+    margin: auto;
+  }
+
   .sub-title {
     font-size: 16px;
     font-weight: 300;
@@ -350,6 +354,22 @@ hr {
     font-weight: 300;
     letter-spacing: 0.12px;
     line-height: 1.15;
+  }
+
+  .cartoon {
+    .hover-image {
+      display: none;
+    }
+    
+    &:hover, &:active {
+      .normal-state-image {
+        display: none;
+      }
+
+      .hover-image {
+        display: block;
+      }
+    } 
   }
 
   .description {
