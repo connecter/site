@@ -41,7 +41,14 @@
 $(document).ready(function() {
   $('.blog').on('click', '.read-more', function(e) {
     event.preventDefault();
-    $(this).closest('article').load($(this).attr('href') + ' #post');
+    var context = $(this).closest('article'),
+        url = $(this).attr('href'),
+        title = $('h1', context).html();
+
+    context.load(url + ' #post', function() {
+      context.find('a.twitter-share').attr('href',
+        'http://twitter.com/share?text=' + title + '&url=' + window.location.protocol + '//' + window.location.host + url);
+    });
   });
 });
 </script>

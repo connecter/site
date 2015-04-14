@@ -270,7 +270,7 @@ body {
     
   @media (min-width: $screen-sm-min) {
     .subscribe-input {
-      padding-right: 0;
+      padding-right: 1px;
     }
     .seperater-wrap {
       width: 20px;
@@ -682,6 +682,15 @@ footer {
     padding: 35px 0 60px;
   }
 
+  .twitter-share-wrap {
+    margin: 70px 0 0;
+    .twitter-share {
+      background: url("../images/twitter-small-hover.svg") left center no-repeat;
+      color: #3BAFDA;
+      padding-left: 30px;
+    }
+  }
+
   hr {
     margin: 5px 0;
     width: 100%;
@@ -708,7 +717,7 @@ footer {
 
   @media (min-width: $screen-sm-min) {
     article {
-      padding: 60px 0 125px;
+      padding: 60px 0 75px;
     }
 
     h1 {
