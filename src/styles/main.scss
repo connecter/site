@@ -267,6 +267,24 @@ body {
   color: #AAB2B9;
 
   padding: 30px 0 15px;
+    
+  @media (min-width: $screen-sm-min) {
+    .subscribe-input {
+      padding-right: 0;
+    }
+    .seperater-wrap {
+      width: 20px;
+    }
+
+    .follow {
+      padding-left: 0;
+      padding-right: 0;
+
+      .lead {
+        margin-left: 25px;
+      }
+    }
+  }
 }
 
 .follow {
