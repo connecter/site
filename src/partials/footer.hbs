@@ -107,6 +107,13 @@ $(document).ready(function() {
       $('.contact-form-name').focus();
     }
   });
+
+  window.setInterval(function() {
+    var next = $('.carousel-caption.active').removeClass('active').next();
+    if(next.length) {}
+    next = next[0] || $('.carousel-caption').first()[0];
+    $(next).addClass('active');
+  }, 3000)
 });
 </script>
 

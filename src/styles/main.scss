@@ -202,10 +202,6 @@ body {
   padding: 55px 0 0;
 }
 
-.carousel-inner .item {
-  position: static;
-}
-
 .carousel-caption {
   left: 0;
   right: 0;
@@ -226,7 +222,7 @@ body {
     bottom: initial;
     left: initial;
     transform: translate(0, -50%);
-    width: 380px;
+    width: 400px;
     font-size: 42px;
     padding: 20px 40px;
 
@@ -238,7 +234,7 @@ body {
 
   @media (min-width: $screen-lg-min) {
     font-size: 64px;
-    width: 540px;
+    width: 560px;
   }
 }
 
@@ -263,6 +259,16 @@ body {
     &:first-child {
       margin-left: none;
     }
+  }
+}
+
+.carousel-caption {
+  opacity: 0;
+
+  transition: opacity 1.5s ease-out;
+
+  &.active {
+    opacity: 1;
   }
 }
 
