@@ -507,7 +507,7 @@ footer {
     font-weight: 300;
     margin: 17px 0 5px;
 
-    &:hover {
+    &:hover, &:active, &:focus {
       color: #fff;
     }
   }
@@ -526,7 +526,7 @@ footer {
     letter-spacing: 0.3px;
     font-weight: 300;
 
-    &:hover, &:active, &:focus{
+    &:hover, &:active, &:focus {
       color: #595d61;
       text-decoration: none;
     }
@@ -768,10 +768,18 @@ footer {
   background: $black;
   color: #AAB2B9;
   font-weight: 300;
-  padding: 0 0 40px;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+  max-height: 1000px;
+  
+  .contact-wrap {
+    padding: 0 0 40px;
+  }
+
 
   &.collapsed {
-    display: none;
+    padding: 0;
+    max-height: 0;
   }
 
   label {
@@ -806,7 +814,10 @@ footer {
   }
 
   @media (min-width: $screen-sm-min) {
-    padding: 0 0 77px;
+
+    .contact-wrap {
+      padding: 0 0 77px;
+    }
 
     .close-contact {
       top: 25px;
