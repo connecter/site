@@ -184,7 +184,7 @@ body {
       content: url("../images/contact-hover.svg");
     }
 
-    &:hover {
+    &:hover, &.toggled {
       background-image: url("../images/contact-hover.svg");
     }
   }
@@ -200,6 +200,10 @@ body {
 
 .meat {
   padding: 55px 0 0;
+}
+
+.carousel-inner .item {
+  position: static;
 }
 
 .carousel-caption {
@@ -267,6 +271,10 @@ body {
   color: #AAB2B9;
 
   padding: 30px 0 15px;
+
+  .subscribe-input input {
+    text-transform: uppercase;
+  }
     
   @media (min-width: $screen-sm-min) {
     .subscribe-input {
@@ -337,7 +345,6 @@ body {
 .form-control {
   padding: 8px 15px;
   font-size: 18px;
-  text-transform: uppercase;
   height: 43px;
 }
 
@@ -367,6 +374,12 @@ hr {
   @media (min-width: $screen-sm-min) {
     text-align: initial;
   }
+}
+
+.right-aligned-sm {
+    @media (min-width: $screen-sm-min) {
+    text-align: right;
+  } 
 }
 
 .vertical-seperator {
@@ -547,7 +560,7 @@ footer {
       border-right: 1px solid #65CDF1;
 
       min-height: 160px;
-      padding: 0 30px;
+      padding: 10px 30px;
     }
 
     .copyright {
@@ -748,5 +761,60 @@ footer {
 .images-list {
   img {
     padding: 20px 0;
+  }
+}
+
+.section-contact {
+  background: $black;
+  color: #AAB2B9;
+  font-weight: 300;
+  padding: 0 0 40px;
+
+  &.collapsed {
+    display: none;
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 18px;
+    text-transform: uppercase;    
+  }
+
+  .btn-send {
+    width: auto;
+    margin: 18px auto 0;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+  h2 {
+    font-weight: 300;
+    margin: 32px 0 17px;
+  }
+
+  position: relative;
+
+  .close-contact {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background: url("../images/close-cross.svg") 0 0 no-repeat;
+    z-index: 10;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    padding: 0 0 77px;
+
+    .close-contact {
+      top: 25px;
+      right: 25px;
+    }
+
+    h2 {
+      margin: 40px 0 17px;
+    }
   }
 }

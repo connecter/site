@@ -1,3 +1,46 @@
+<div class="section-contact collapsed">
+  <div class="container">
+      <a href="javascript:;" class="close-contact contact-form-toggle"><span class="sr-only">Close contact form</span></a>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Contact us</h2>
+        </div>
+      </div>
+      <form action="">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-12">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control contact-form-name">
+              </div>
+              <div class="col-sm-12">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control">
+              </div>
+  
+              <div class="col-sm-12">
+                <label for="city">City/Country</label>
+                <input type="city" id="city" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-xs-12">
+                <label for="message">Message</label>
+                <textarea id="message" rows="6" class="form-control"></textarea>
+                <div class="centered-xs right-aligned-sm">
+                  <input type="submit" class="btn btn-primary btn-send" value="Send">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+
 <footer>
   <div class="container">
     <div class="row">
@@ -22,9 +65,9 @@
 
       <div class="col-sm-6">
         <div class="social-links">
-          <a href="https://twitter.com/ConnecterIO" class="contact">Contact us</a>
+          <a href="javascript:;" class="contact contact-form-toggle">Contact us</a>
           <a href="https://twitter.com/ConnecterIO" class="twitter">Follow us on Twitter</a>
-          <a href="https://twitter.com/ConnecterIO" class="angel">Follow us on AngelList</a>
+          <a href="https://angel.co/connecter-io" class="angel">Follow us on AngelList</a>
         </div>
         <hr class="visible-xs">
       </div> 
@@ -49,6 +92,12 @@ $(document).ready(function() {
       context.find('a.twitter-share').attr('href',
         'http://twitter.com/share?text=' + title + '&url=' + window.location.protocol + '//' + window.location.host + url);
     });
+  });
+
+  $('.contact-form-toggle').on('click', function() {
+    $('.section-contact').toggleClass('collapsed');
+    $('.contact-form-toggle').toggleClass('toggled');
+    $('.contact-form-name').focus()
   });
 });
 </script>
