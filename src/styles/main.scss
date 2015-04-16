@@ -265,7 +265,7 @@ body {
 .carousel-caption {
   opacity: 0;
 
-  transition: opacity 1.5s ease-out;
+  transition: opacity 1.5s ease;
 
   &.active {
     opacity: 1;
@@ -775,7 +775,7 @@ footer {
   color: #AAB2B9;
   font-weight: 300;
   overflow: hidden;
-  transition: all 0.5s ease-out;
+  transition: all 1s ease;
   max-height: 1000px;
   
   .contact-wrap {
