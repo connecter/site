@@ -20,6 +20,7 @@ $navbar-inverse-link-color: #fff;
 $navbar-inverse-link-active-bg: none;
 
 @import "bootstrap";
+@import "ladda-themeless.min";
 
 body {
   background: #d8d8d8;
@@ -770,6 +771,22 @@ footer {
   }
 }
 
+label {
+  &.error {
+    display: none!important;
+  }
+}
+
+
+.error {
+  border: 2px solid #de483d;
+
+  &:focus {
+    border: 2px solid #de483d;
+    box-shadow: none;
+  }
+}
+
 .section-contact {
   background: $black;
   color: #AAB2B9;
@@ -828,6 +845,11 @@ footer {
     .close-contact {
       top: 25px;
       right: 25px;
+    }
+
+    .lead {
+      padding-top: 12px;
+      text-align: center;
     }
 
     h2 {

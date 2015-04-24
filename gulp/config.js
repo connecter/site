@@ -6,7 +6,9 @@ module.exports = {
     server: {
       // Serve up our build folder
       baseDir: dest
-    }
+    },
+    https: true,
+    apiUrl: 'https://www.connecter.io/api'
   }, 
   sass: {
     src: src + "/styles/",
