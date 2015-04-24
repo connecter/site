@@ -47,7 +47,6 @@ $(document).ready(function() {
       })
       .fail(function() {
         l.ladda( 'stop' );
-        $('.form-container', formWrap).hide();
         $('.failure', formWrap).removeClass('hide');
       });
     }
