@@ -1,4 +1,9 @@
 {
+  "name": "connecter-site",
+  "description": "web site",
+  "version": "0.0.1",
+  "license" : "Proprietary",
+    
   "devDependencies": {
     "browser-sync": "^2.2.0",
     "browserify": "^8.0.2",
