@@ -10,8 +10,5 @@ before_install:
 install:
   - bundle install
   
-before_script:
-  - npm install -g gulp
-  
 script:
   - gulp build
